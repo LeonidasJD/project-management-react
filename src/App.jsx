@@ -1,8 +1,25 @@
+import NewProject from "./components/NewProject";
+import ProjectSidebar from "./components/ProjectSidebar";
+import NoProjectSelected from "./components/NoProjectSelected";
+import {useState} from 'react';
+
 function App() {
+const [inputsShow,setInputsShow] = useState(false);
+
+
+function showInputs(){
+  setInputsShow(true);
+  
+}
+
   return (
-    <>
-      <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-    </>
+    <main className="h-screen my-8 flex gap-8">
+      <ProjectSidebar onStartAddProject={()=>showInputs()}/>
+      {inputsShow ? <NewProject /> : <NoProjectSelected onStartAddProject={()=>showInputs()}/>}
+      
+      
+
+    </main>
   );
 }
 
