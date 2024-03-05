@@ -2,7 +2,7 @@ import {useRef, useState} from 'react';
 import Input from "./Input";
 import Modal from './Modal';
 
-export default function NewProject({onAdd}){
+export default function NewProject({onAdd,onCancel}){
     
 
    
@@ -39,7 +39,7 @@ export default function NewProject({onAdd}){
        
          <div className="w-[35rem] mt-16">
         <menu className="flex items-center justify-end gap-4 my-4">
-            <li><button className={cancelStyle}>Cancel</button></li>
+            <li><button className={cancelStyle} onClick={()=>onCancel()}>Cancel</button></li>
             <li><button className={saveStle} onClick={()=>onHandleSave()}>Save</button></li>
         </menu>
         <div>
@@ -49,9 +49,9 @@ export default function NewProject({onAdd}){
         </div>
         <div>
             <Modal ref={modal}>
-               <h2>Invalid Input</h2>
-               <p>Ooops...looks like you forgot to enter a value</p>
-               <p>Please make sure you provide a valid value for every filed!</p>
+               <h2 className="text-xl font-bold text-stone-500 my-4">Invalid Input</h2>
+               <p className="text-stone-400 mb-4">Ooops...looks like you forgot to enter a value</p>
+               <p className="text-stone-400 mb-4">Please make sure you provide a valid value for every filed!</p>
                
             </Modal>
         </div>

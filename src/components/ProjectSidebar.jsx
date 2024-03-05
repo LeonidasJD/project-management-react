@@ -1,4 +1,4 @@
-export default function ProjectSidebar({onStartAddProject,myProjects}){
+export default function ProjectSidebar({onStartAddProject,myProjects,onSelect}){
 
     const asideStyle = "w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl";
     const headStyle = "mb-8 font-bold uppercase md:text-xl text-stone-50 ";
@@ -14,7 +14,7 @@ export default function ProjectSidebar({onStartAddProject,myProjects}){
             <button onClick={onStartAddProject} className={buttonStyle}>+ Add Project</button>
             <ul className="mt-2"> 
                 {myProjects.map((project)=>(
-                    <li key={project.Id}><button className={projectBtn}>{project.Title}</button></li>//prosli smo kroz niz objekata i ispisali naslove projekata u listu
+                    <li key={project.Id}><button onClick={()=>onSelect(project.Id)} className={projectBtn}>{project.Title}</button></li>//prosli smo kroz niz objekata i ispisali naslove projekata u listu
                 ))}
             </ul>
         </aside>
