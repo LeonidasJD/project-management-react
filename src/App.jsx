@@ -5,15 +5,15 @@ import SelectedProject from "./components/SelectedProject";
 import {useState} from 'react';
 
 function App() {
-const [inputsShow,setInputsShow] = useState(false);
-const [projectStates,setProjectStates] = useState([
+const [inputsShow,setInputsShow] = useState(false);//stanje koje prikazuje da li se prikazuju input polja za unos projekta
+const [projectStates,setProjectStates] = useState([//stanje koje cuva niz napravljenih projekata
   {Title:'',
   Description:'',
   Due_Date:'',
   Id:''},
 ]);
-const [selectProject,setSelectProject] = useState(false);
-const [choosenProject,setChoosenProject] = useState({
+const [selectProject,setSelectProject] = useState(false);//stanje koje omogucava prikaz single projekta tj komponente SelectedProject
+const [choosenProject,setChoosenProject] = useState({//stanje kojkje prikazuje single projekat
   projectTitle:'',
   projectDesc:'',
   projectDate:'',
